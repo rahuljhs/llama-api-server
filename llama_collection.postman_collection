@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "9abca2b1-dc13-4565-87eb-41b44af1df03",
+		"name": "llama-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "infill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"prefixes\" : [\"def remove_non_ascii(s: str) -> str\"],\r\n  \"suffixes\": [\"return result\"],\r\n  \"temperature\": 0.2,\r\n  \"top_p\": 0.9,\r\n  \"max_gen_len\": 128\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/infill",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"infill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"prompts\" :  [\"import socket def ping_exponential_backoff(host: str)\", \"import argparse def main(string: str)\"],\r\n  \"temperature\": 0.2,\r\n  \"top_p\": 0.9,\r\n  \"max_gen_len\": 128\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/generate",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"generate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"dialogs\" :[\r\n        [\r\n            {\r\n                \"role\": \"user\",\r\n                \"content\": \"In Bash, how do I list all text files in the current directory (excluding subdirectories) that have been modified in the last month?\"\r\n            }\r\n        ],\r\n        [\r\n            {\r\n                \"role\": \"user\",\r\n                \"content\": \"What is the difference between inorder and preorder traversal? Give an example in Python.\"\r\n            }\r\n        ],\r\n        [\r\n            {\r\n                \"role\": \"system\",\r\n                \"content\": \"Provide answers in JavaScript\"\r\n            },\r\n            {\r\n                \"role\": \"user\",\r\n                \"content\": \"Write a function that computes the set of sums of all contiguous sublists of a given list.\"\r\n            }\r\n        ]\r\n    ],\r\n  \"temperature\": 0.2,\r\n  \"top_p\": 0.9,\r\n  \"max_gen_len\": 128\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/chat",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"chat"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
